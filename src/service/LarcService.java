@@ -4,6 +4,7 @@ import model.*;
 import protocol.Response;
 
 import java.util.List;
+import java.util.Optional;
 
 public class LarcService {
 
@@ -15,11 +16,11 @@ public class LarcService {
         return new GetPlayersRequest().getPlayers();
     }
 
-    public Response<Message> getMessage() {
+    public Response<Optional<Message>> getMessage() {
         return new GetMessageRequest().getMessage();
     }
 
-    public Response<Card> getCard() {
+    public Response<Optional<Card>> getCard() {
         return new GetCardRequest().getCard();
     }
 

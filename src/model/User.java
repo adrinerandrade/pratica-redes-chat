@@ -1,14 +1,16 @@
 package model;
 
+import java.util.Objects;
+
 public class User {
 
     private int id;
-    private int userId;
+    private String name;
     private int winCount;
 
-    public User(int id, int userId, int winCount) {
+    public User(int id, String name, int winCount) {
         this.id = id;
-        this.userId = userId;
+        this.name = name;
         this.winCount = winCount;
     }
 
@@ -20,20 +22,42 @@ public class User {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getName() {
+        return name;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getWinNumber() {
+    public int getWinCount() {
         return winCount;
     }
 
-    public void setWinNumber(int winNumber) {
-        this.winCount = winNumber;
+    public void setWinCount(int winCount) {
+        this.winCount = winCount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", winCount=" + winCount +
+                '}';
     }
 
 }

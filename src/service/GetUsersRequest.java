@@ -22,7 +22,7 @@ public class GetUsersRequest {
             .map(out -> {
                 List<User> users = new LinkedList<>();
                 for (int i = 0; i < out.size() / 3; i++) {
-                    users.add(new User(valueOf(out.get(i)), valueOf(out.get(i + 1)), valueOf(out.get(i + 2))));
+                    users.add(new User(valueOf(out.get(i)), out.get(i + 1), valueOf(out.get(i + 2))));
                 }
                 return users;
             });

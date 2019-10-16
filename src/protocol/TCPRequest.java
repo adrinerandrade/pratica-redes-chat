@@ -18,14 +18,22 @@ public class TCPRequest {
         }
     }
 
-    private String doRequest(String input) throws IOException {
+    private String doRequest(String input) throws IOException, InvalidLarcMessageException {
         try (Socket socket = new Socket(ServerInfo.HOST, ServerInfo.TCP_PORT)) {
             DataOutputStream dataStream = new DataOutputStream(socket.getOutputStream());
-            dataStream.writeBytes(input + '\n');
+            dataStream.write((input + '\n').getBytes());
+
             InputStreamReader stream = new InputStreamReader(socket.getInputStream());
             BufferedReader rec = new BufferedReader(stream);
-            return rec.readLine();
+            String output = rec.readLine();
+            validateOutput(output);
+            return output;
         }
+    }
+
+    private void validateOutput(String output) throws InvalidLarcMessageException {
+        if ("Mensagem inválida!".equals(output))
+            throw new InvalidLarcMessageException();
     }
 
 }
