@@ -5,7 +5,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-public class UDPRequest {
+public class UDPDatagram {
 
     public void send(String input) {
         try {

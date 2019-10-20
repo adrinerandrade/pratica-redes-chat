@@ -1,9 +1,23 @@
+import model.GameCommand;
 import service.LarcService;
 
 public class Main {
 
     public static void main(String[] args) {
-        LarcService larcService = new LarcService();
+        try (LarcService larcService = new LarcService()) {
+            execute(larcService);
+        }
+    }
+
+    private static void execute(LarcService larcService) {
+        larcService.sendGame(GameCommand.ENTER);
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         larcService.getUsers()
             .ifSuccess(users -> users.forEach(System.out::println));
         larcService.getPlayers()

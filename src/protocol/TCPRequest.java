@@ -19,16 +19,16 @@ public class TCPRequest {
     }
 
     private String doRequest(String input) throws IOException, InvalidLarcMessageException {
-        try (Socket socket = new Socket(ServerInfo.HOST, ServerInfo.TCP_PORT)) {
-            DataOutputStream dataStream = new DataOutputStream(socket.getOutputStream());
-            dataStream.write((input + '\n').getBytes());
+        Socket socket = TCPSocketProvider.get();
 
-            InputStreamReader stream = new InputStreamReader(socket.getInputStream());
-            BufferedReader rec = new BufferedReader(stream);
-            String output = rec.readLine();
-            validateOutput(output);
-            return output;
-        }
+        DataOutputStream dataStream = new DataOutputStream(socket.getOutputStream());
+        dataStream.write((input + '\n').getBytes());
+
+        InputStreamReader stream = new InputStreamReader(socket.getInputStream());
+        BufferedReader rec = new BufferedReader(stream);
+        String output = rec.readLine();
+        validateOutput(output);
+        return output;
     }
 
     private void validateOutput(String output) throws InvalidLarcMessageException {

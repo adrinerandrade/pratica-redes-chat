@@ -12,7 +12,8 @@ public class LarcProtocol {
     }
 
     public void send(String object, LarcProtocolParams params) {
-        mountInput("send", object, params);
+        new UDPDatagram()
+            .send(mountInput("send", object, params));
     }
 
     private String mountInput(String method, String object, LarcProtocolParams params) {
