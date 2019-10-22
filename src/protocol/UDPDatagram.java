@@ -21,6 +21,8 @@ public class UDPDatagram {
         InetAddress ip = InetAddress.getByName(ServerInfo.HOST);
         DatagramPacket pack = new DatagramPacket(content, content.length, ip, ServerInfo.UDP_PORT);
         DatagramSocket socket = new DatagramSocket();
+
+        System.out.println("Sending datagram: " + input);
         socket.send(pack);
         socket.close();
     }

@@ -12,20 +12,25 @@ public class Main {
     private static void execute(LarcService larcService) {
         larcService.sendGame(GameCommand.ENTER);
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        larcService.sendMessage(8648, "E aí zé");
 
-        larcService.getUsers()
-            .ifSuccess(users -> users.forEach(System.out::println));
-        larcService.getPlayers()
-            .ifSuccess(users -> users.forEach(System.out::println));
-        larcService.getMessage()
-            .ifSuccess(System.out::println);
-        larcService.getCard()
-            .ifSuccess(System.out::println);
+        int count = 0;
+        while (count++ < 10) {
+            try {
+                Thread.sleep(6000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            larcService.getUsers()
+                .ifSuccess(users -> users.forEach(System.out::println));
+            larcService.getPlayers()
+                .ifSuccess(players -> players.forEach(System.out::println));
+            larcService.getMessage()
+                .ifSuccess(System.out::println);
+            larcService.getCard()
+                .ifSuccess(System.out::println);
+        }
     }
 
 }

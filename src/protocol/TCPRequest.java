@@ -22,6 +22,8 @@ public class TCPRequest {
         Socket socket = TCPSocketProvider.get();
 
         DataOutputStream dataStream = new DataOutputStream(socket.getOutputStream());
+
+        System.out.println("Sending request: " + input);
         dataStream.write((input + '\n').getBytes());
 
         InputStreamReader stream = new InputStreamReader(socket.getInputStream());
