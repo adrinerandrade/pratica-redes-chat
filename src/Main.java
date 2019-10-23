@@ -12,15 +12,9 @@ public class Main {
     private static void execute(LarcService larcService) {
         larcService.sendGame(GameCommand.ENTER);
 
-        larcService.sendMessage(8648, "E aí zé");
-
         int count = 0;
         while (count++ < 10) {
-            try {
-                Thread.sleep(6000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            larcService.sendMessage(0, "Opa, tudo certo?");
 
             larcService.getUsers()
                 .ifSuccess(users -> users.forEach(System.out::println));
@@ -30,6 +24,12 @@ public class Main {
                 .ifSuccess(System.out::println);
             larcService.getCard()
                 .ifSuccess(System.out::println);
+
+            try {
+                Thread.sleep(6000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

@@ -17,7 +17,7 @@ public class UDPDatagram {
     }
 
     private void doSend(String input) throws IOException {
-        byte[] content = input.getBytes();
+        byte[] content = (input + '\n').getBytes();
         InetAddress ip = InetAddress.getByName(ServerInfo.HOST);
         DatagramPacket pack = new DatagramPacket(content, content.length, ip, ServerInfo.UDP_PORT);
         DatagramSocket socket = new DatagramSocket();

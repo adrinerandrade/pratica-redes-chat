@@ -16,7 +16,7 @@ public class GetCardRequest {
         LarcProtocolParams params = new LarcProtocolParams();
         params.add(Login.getUserId());
         params.add(Login.getPassword());
-        return larcProtocol.get("message", params)
+        return larcProtocol.get("card", params)
             .map(out ->
                 !out.isEmpty() ? Optional.of(new Card(out.get(0), CardSuit.valueOf(out.get(1)))) :
                 Optional.empty()
