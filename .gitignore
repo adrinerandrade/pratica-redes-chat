@@ -12,7 +12,7 @@
 
 .idea
 out
-.iml
+*.iml
 
 # Package Files #
 *.jar
