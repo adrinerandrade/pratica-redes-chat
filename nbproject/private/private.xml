@@ -3,7 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/clebe/OneDrive/Documentos/pratica-redes-chat/src/model/GameStatus.java</file>
+            <file>file:/C:/Users/clebe/OneDrive/Documentos/pratica-redes-chat/src/model/Card.java</file>
+            <file>file:/C:/Users/clebe/OneDrive/Documentos/pratica-redes-chat/src/protocol/UDPDatagram.java</file>
             <file>file:/C:/Users/clebe/OneDrive/Documentos/pratica-redes-chat/src/view/MainView.java</file>
+            <file>file:/C:/Users/clebe/OneDrive/Documentos/pratica-redes-chat/src/model/CardSuit.java</file>
+            <file>file:/C:/Users/clebe/OneDrive/Documentos/pratica-redes-chat/src/service/GetCardRequest.java</file>
+            <file>file:/C:/Users/clebe/OneDrive/Documentos/pratica-redes-chat/src/view/LoginView.java</file>
             <file>file:/C:/Users/clebe/OneDrive/Documentos/pratica-redes-chat/src/login/Login.java</file>
         </group>
     </open-files>

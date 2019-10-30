@@ -54,16 +54,14 @@ public class MainView extends javax.swing.JFrame {
         tableUser = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         listCartasEu = new javax.swing.JList<>();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        listCartasOponente = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         btJogar = new javax.swing.JButton();
         btParar = new javax.swing.JButton();
         btSair = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         listPlayers = new javax.swing.JList<>();
         jLabel3 = new javax.swing.JLabel();
+        btPedir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,11 +104,7 @@ public class MainView extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(listCartasEu);
 
-        jScrollPane4.setViewportView(listCartasOponente);
-
         jLabel1.setText("Minhas cartas");
-
-        jLabel2.setText("Cartas do oponente");
 
         btJogar.setText("Jogar");
         btJogar.addActionListener(new java.awt.event.ActionListener() {
@@ -137,6 +131,13 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel3.setText("Jogadores");
 
+        btPedir.setText("Pedir");
+        btPedir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPedirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -153,21 +154,17 @@ public class MainView extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(btParar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btJogar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jLabel2))))
-                            .addComponent(btJogar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btParar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btPedir, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(enviarMsgSelec)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -191,18 +188,18 @@ public class MainView extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
                                     .addComponent(jLabel3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jScrollPane2)
-                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btPedir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btJogar, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btJogar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btParar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btParar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(42, 42, 42)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -243,6 +240,18 @@ public class MainView extends javax.swing.JFrame {
         larcService.sendGame(GameCommand.QUIT);
     }//GEN-LAST:event_btSairActionPerformed
 
+    private void btPedirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPedirActionPerformed
+        //Listar cartas
+        larcService.getCard().ifSuccess(card -> {
+            Optional<Card> carta = card;
+            if (card.isPresent()) {
+                String desc = card.get().getNumber()+card.get().getSuit().getDescricao();
+                modelCartasEu.addElement(desc);
+            }
+        });
+        listCartasEu.setModel(modelCartasEu);
+    }//GEN-LAST:event_btPedirActionPerformed
+
     Runnable atualizar = new Runnable() {
         public void run() {
             DefaultTableModel modelUser = (DefaultTableModel) tableUser.getModel();
@@ -262,10 +271,10 @@ public class MainView extends javax.swing.JFrame {
                 modelPlayer.clear();
                 larcService.getPlayers().ifSuccess(players -> {
                     for (Player player : players) {
-                        modelPlayer.addElement(player.getUserId());
-                        if (player.getStatus() == GameStatus.IDLE) {
-                            modelCartasEu.clear();
-                        }
+                        modelPlayer.addElement(player.getUserId()+" "+player.getStatus().toString());
+                    }
+                    if (players.stream().allMatch(player -> player.getStatus().equals(GameStatus.WAITING))) {
+                        modelCartasEu.clear();
                     }
                 });
                 listPlayers.setModel(modelPlayer);
@@ -277,20 +286,6 @@ public class MainView extends javax.swing.JFrame {
                         dsMensagens.append(msg.get().getContent()+"\n");
                     }
                 });
-                
-                //Listar cartas
-                larcService.getCard().ifSuccess(card -> {
-                    Optional<Card> carta = card;
-                    if (card.isPresent()) {
-                        String desc = card.get().getNumber()+card.get().getSuit().getDescricao();
-                        /*if (verifca se a carta é do usuário logado) {*/
-                            modelCartasEu.addElement(desc);
-                        /*} else {
-                            modelCartasOponente.addElement(desc);
-                        }*/
-                    }
-                });
-                listCartasEu.setModel(modelCartasEu);
                 
                 //Timer
                 try {
@@ -340,20 +335,18 @@ public class MainView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btJogar;
     private javax.swing.JButton btParar;
+    private javax.swing.JButton btPedir;
     private javax.swing.JButton btSair;
     private javax.swing.JTextArea dsMensagens;
     private javax.swing.JButton enviarMsgSelec;
     private javax.swing.JButton enviarMsgTodos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JList<String> listCartasEu;
-    private javax.swing.JList<String> listCartasOponente;
     private javax.swing.JList<String> listPlayers;
     private javax.swing.JTextField mensagem;
     private javax.swing.JTable tableUser;
